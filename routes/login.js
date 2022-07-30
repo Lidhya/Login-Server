@@ -33,12 +33,12 @@ router.post('/signin',function(req,res){
    // if(response.status){
       req.session.loggedIn=true
       req.session.user=response.user
-      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate');
       res.render('home',{title:'Home Page'})
    // }else{
     //  req.session.loginErr="Invalid user name or Password"
     //  res.redirect('/')
-      ////res.render('login', { title: 'Login', fail:'Invalid Username or password' });
+    //res.render('login', { title: 'Login', fail:'Invalid Username or password' });
     //}
   }).catch(()=>{
     req.session.loginErr="Invalid user name or Password"
